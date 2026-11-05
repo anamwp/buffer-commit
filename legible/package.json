@@ -1,0 +1,48 @@
+{
+  "name": "legible",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --experimental-https",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "node e2e/smoke.mjs",
+    "build:data": "node scripts/build-data.mjs",
+    "mock:buffer": "node scripts/mock-buffer.mjs",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.5.0",
+    "@electric-sql/pglite": "^0.5.15",
+    "@neondatabase/serverless": "^1.2.0",
+    "drizzle-orm": "^0.45.4",
+    "emoji-regex": "^11.0.0",
+    "iron-session": "9.0.1",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "server-only": "^0.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "unicode-emoji-json": "^0.9.0",
+    "vitest": "^5.1.0",
+    "wordlist-english": "1.2.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

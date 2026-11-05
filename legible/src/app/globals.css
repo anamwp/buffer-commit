@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --surface-2: #efede6;
+  --ink: #1b1d22;
+  --ink-2: #4a4f5a;
+  --line: #dcd9cf;
+  --brand: #1f5f5b;
+  --brand-ink: #ffffff;
+  --brand-soft: #dcebe8;
+  --high: #b3261e;
+  --high-soft: #fbe3e1;
+  --medium: #8a5a00;
+  --medium-soft: #fbedd0;
+  --low: #3d5a99;
+  --low-soft: #e2e8f6;
+  --good: #1e7a46;
+  --good-soft: #dcf1e4;
+  --focus: #0b57d0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121417;
+    --surface: #1a1d21;
+    --surface-2: #23272d;
+    --ink: #eceae4;
+    --ink-2: #b4b2ab;
+    --line: #34383f;
+    --brand: #7cc7bf;
+    --brand-ink: #0d1f1d;
+    --brand-soft: #1d3634;
+    --high: #ff8a80;
+    --high-soft: #3b1f1d;
+    --medium: #f2c46b;
+    --medium-soft: #3a2f17;
+    --low: #9fb6ec;
+    --low-soft: #1f2840;
+    --good: #7fd8a2;
+    --good-soft: #17301f;
+    --focus: #8ab4f8;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-soft: var(--brand-soft);
+  --color-high: var(--high);
+  --color-high-soft: var(--high-soft);
+  --color-medium: var(--medium);
+  --color-medium-soft: var(--medium-soft);
+  --color-low: var(--low);
+  --color-low-soft: var(--low-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --font-sans: var(--font-atkinson), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  background: var(--surface);
+  padding: 0.5rem 1rem;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 45%, transparent); }
+  100% { box-shadow: 0 0 0 14px transparent; }
+}
+.speaking {
+  animation: pulse-ring 1.2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
